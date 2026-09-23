@@ -6,7 +6,7 @@ import StreetList from './components/StreetList.jsx'
 import StreetDetails from './components/StreetDetails.jsx'
 import StatusMessage from './components/StatusMessage.jsx'
 import Footer from './components/Footer.jsx'
-import { categories, streetOrigins } from './data/streetOrigins.js'
+import { categories, regions, streetOrigins } from './data/streetOrigins.js'
 import { searchRioAddresses } from './services/viacep.js'
 import { normalizeText } from './utils/text.js'
 
@@ -37,6 +37,7 @@ export default function App() {
   const [apiResults, setApiResults] = useState([])
   const [hasSearched, setHasSearched] = useState(false)
   const [category, setCategory] = useState('Todos')
+  const [region, setRegion] = useState('Todas')
   const [selectedStreet, setSelectedStreet] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -65,12 +66,22 @@ export default function App() {
       const history = street.history
       const matchesCategory =
         category === 'Todos' || history?.category === category
+      const matchesRegion =
+        region === 'Todas' || history?.region === region
       const matchesFavorite =
         !onlyFavorites || favorites.includes(streetKey(street))
 
-      return matchesCategory && matchesFavorite
+      return matchesCategory && matchesRegion && matchesFavorite
     })
-  }, [apiResults, category, favorites, hasSearched, localStreets, onlyFavorites])
+  }, [
+    apiResults,
+    category,
+    favorites,
+    hasSearched,
+    localStreets,
+    onlyFavorites,
+    region,
+  ])
 
   async function handleSearch(event) {
     event.preventDefault()
@@ -127,6 +138,7 @@ export default function App() {
     setHasSearched(false)
     setError('')
     setCategory('Todos')
+    setRegion('Todas')
     setOnlyFavorites(false)
   }
 
@@ -164,11 +176,25 @@ export default function App() {
             />
 
             <div className="toolbar">
-              <CategoryFilter
-                categories={categories}
-                value={category}
-                onChange={setCategory}
-              />
+              <div>
+                <p className="section-label">Origem do nome</p>
+                <CategoryFilter
+                  categories={categories}
+                  value={category}
+                  onChange={setCategory}
+                  label="Filtrar por categoria de origem"
+                />
+              </div>
+
+              <div>
+                <p className="section-label">Região</p>
+                <CategoryFilter
+                  categories={regions}
+                  value={region}
+                  onChange={setRegion}
+                  label="Filtrar por região da cidade"
+                />
+              </div>
 
               <div className="toolbar-actions">
                 <button
@@ -195,7 +221,7 @@ export default function App() {
                 <h2>
                   {hasSearched
                     ? 'Logradouros encontrados'
-                    : 'Alguns nomes que guardam memória'}
+                    : 'Cem nomes que guardam memória'}
                 </h2>
               </div>
               <StatusMessage
@@ -219,6 +245,11 @@ export default function App() {
                 vem da API: ela é associada por uma base local de curadoria. Quando
                 um logradouro ainda não está catalogado, a aplicação informa isso
                 em vez de gerar uma origem automaticamente.
+              </p>
+              <p>
+                Para fins de navegação, “Zona Sudoeste” é uma categoria operacional
+                deste projeto que reúne principalmente Barra da Tijuca, Recreio e
+                Jacarepaguá; não é apresentada como divisão administrativa oficial.
               </p>
             </aside>
           </div>
