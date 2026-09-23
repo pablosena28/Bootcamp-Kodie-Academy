@@ -116,9 +116,9 @@ npm run build
 
 ## Publicação
 
-O projeto está preparado para publicação em Vercel ou Netlify.
+A aplicação está publicada na Vercel:
 
-**Aplicação publicada:** adicionar o link após o deploy.
+**https://ruas-do-rio.vercel.app/**
 
 ## Uso de Inteligência Artificial
 
