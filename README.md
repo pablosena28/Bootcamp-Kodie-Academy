@@ -1,74 +1,42 @@
-# PULSO — Landing Page de Moda Esportiva
+# Bootcamp Kodie Academy — Projetos Front-End
 
-Landing page responsiva de uma loja hipotética de roupas esportivas. O projeto foi desenvolvido para um desafio de bootcamp utilizando apenas HTML5, CSS3, Git e GitHub Pages.
+Repositório de projetos desenvolvidos durante o bootcamp, organizados em pastas independentes.
 
-## Sobre o projeto
+## Projetos
 
-A **PULSO** é uma marca fictícia de moda esportiva que combina desempenho, conforto e estilo. A página apresenta a proposta da marca, produtos em destaque, uma galeria inspiracional e um canal de contato.
+### PULSO — Landing Page de Moda Esportiva
 
-## Tecnologias
+Landing page responsiva construída com HTML5 e CSS3, sem JavaScript.
 
-- HTML5 semântico
-- CSS3 externo
-- Flexbox e CSS Grid
-- Git e GitHub
-- GitHub Pages
+- Código: [projetos/pulso-landing-page](projetos/pulso-landing-page)
+- Demonstração: https://pablosena28.github.io/Bootcamp-Kodie-Academy/projetos/pulso-landing-page/
 
-O projeto não utiliza JavaScript, CSS inline ou a tag `<style>`.
+### Ruas do Rio — História dos Logradouros Cariocas
 
-## Critérios atendidos
+Aplicação React + Vite que consulta logradouros do município do Rio de Janeiro em uma API pública e cruza os resultados com uma base histórica local.
 
-- `header`, `nav`, `main`, `section`, `article` e `footer`;
-- hero com título, descrição e CTA;
-- seção sobre a marca;
-- três cards de produtos;
-- galeria de imagens;
-- contato e links no rodapé;
-- imagens com textos alternativos;
-- hierarquia de títulos;
-- link para pular ao conteúdo;
-- foco visível para teclado;
-- layout responsivo para celular, tablet e desktop;
-- suporte à preferência de redução de movimento.
+- Código: [projetos/ruas-do-rio](projetos/ruas-do-rio)
+- Tecnologias: React, Vite, JavaScript, CSS, Fetch API e localStorage
+- API: ViaCEP
 
-## Estrutura
+## Organização
+
+Cada trabalho do bootcamp fica em uma pasta própria dentro de `projetos/`.
 
 ```text
-pulso-sports/
+Bootcamp-Kodie-Academy/
+├── projetos/
+│   ├── pulso-landing-page/
+│   └── ruas-do-rio/
 ├── index.html
 ├── styles.css
 └── README.md
 ```
 
-## Uso consciente da IA
-
-A IA foi utilizada para apoiar o planejamento, a escrita, a revisão do código e a verificação dos critérios do desafio. Todo o conteúdo foi analisado e adaptado antes da entrega.
-
-### Prompts utilizados
-
-1. “Estruture uma landing page semântica para uma loja fictícia de moda esportiva, sem JavaScript e sem CSS inline.”
-2. “Crie textos curtos para uma marca esportiva jovem, urbana e focada em movimento.”
-3. “Sugira uma identidade visual enérgica, com alto contraste e boa legibilidade.”
-4. “Revise o HTML para acessibilidade, incluindo alt, hierarquia de títulos, foco e link de salto.”
-5. “Revise o CSS para funcionar sem rolagem horizontal em celular, tablet e desktop.”
-
-### Como a IA ajudou
-
-- Organizou a arquitetura da página;
-- criou uma primeira versão dos textos;
-- sugeriu a paleta e a direção visual;
-- identificou requisitos de acessibilidade;
-- apoiou a documentação técnica.
-
-## Aprendizados
-
-O projeto exercita HTML semântico, seletores CSS, variáveis, Grid, Flexbox, media queries, acessibilidade e documentação de código.
-
-## Links
-
-- **Site publicado:** https://pablosena28.github.io/Bootcamp-Kodie-Academy/
-- **Repositório:** https://github.com/pablosena28/Bootcamp-Kodie-Academy
+O `index.html` da raiz funciona apenas como página de navegação entre os projetos.
 
 ## Autor
 
-Pablo Matheus Sena dos Santos
+**Pablo Matheus Sena dos Santos**
+
+GitHub: [@pablosena28](https://github.com/pablosena28)
