@@ -16,6 +16,7 @@ Landing page responsiva construída com HTML5 e CSS3, sem JavaScript.
 Aplicação React + Vite que consulta logradouros do município do Rio de Janeiro em uma API pública e cruza os resultados com uma base histórica local.
 
 - Código: [projetos/ruas-do-rio](projetos/ruas-do-rio)
+- Demonstração: https://ruas-do-rio.vercel.app/
 - Tecnologias: React, Vite, JavaScript, CSS, Fetch API e localStorage
 - API: ViaCEP
 
