@@ -49,7 +49,7 @@ A explicação histórica **não é produzida pela ViaCEP**. Ela vem do arquivo 
 - busca de logradouros na API;
 - visualização de CEP e bairro;
 - associação com a origem histórica quando catalogada;
-- filtro por categoria da origem;
+- filtro por categoria da origem;\n- filtro territorial por Centro, Zona Norte, Zona Sul, Zona Sudoeste e Zona Oeste;
 - favoritos persistidos no navegador;
 - painel de detalhes;
 - link para pesquisa do endereço no OpenStreetMap;
@@ -58,9 +58,9 @@ A explicação histórica **não é produzida pela ViaCEP**. Ela vem do arquivo 
 
 ## Base histórica
 
-A versão inicial inclui uma pequena seleção de logradouros para demonstrar a arquitetura da aplicação.
+A base local contém **100 logradouros**, distribuídos de forma equilibrada entre cinco recortes territoriais usados pela interface: **Centro, Zona Norte, Zona Sul, Zona Sudoeste e Zona Oeste**, com 20 registros em cada grupo.
 
-Os resumos históricos são conteúdo inicial de estudo. O próprio sistema identifica essa condição e recomenda validação em fontes institucionais antes de uso acadêmico. A aplicação não inventa uma origem para nomes que ainda não estejam catalogados.
+Os resumos históricos são conteúdo inicial de estudo. O próprio sistema identifica essa condição e recomenda validação em fontes institucionais antes de uso acadêmico. A aplicação não inventa uma origem para nomes que ainda não estejam catalogados.\n\nNo projeto, **Zona Sudoeste** é uma categoria operacional para reunir principalmente Barra da Tijuca, Recreio dos Bandeirantes e Jacarepaguá. Ela não é apresentada como uma divisão administrativa oficial do município.
 
 Essa decisão permite ampliar a base progressivamente sem confundir dado da API com interpretação histórica.
 
