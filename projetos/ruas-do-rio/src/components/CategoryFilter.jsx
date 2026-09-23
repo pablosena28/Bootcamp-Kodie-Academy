@@ -1,6 +1,11 @@
-export default function CategoryFilter({ categories, value, onChange }) {
+export default function CategoryFilter({
+  categories,
+  value,
+  onChange,
+  label = 'Filtrar resultados',
+}) {
   return (
-    <div className="filter-group" aria-label="Filtrar por origem do nome">
+    <div className="filter-group" aria-label={label}>
       {categories.map((category) => (
         <button
           key={category}
