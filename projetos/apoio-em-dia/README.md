@@ -8,7 +8,7 @@ MVP para organizar pedidos de apoio em um pré-vestibular social, inspirado na e
 
 ## Aplicação
 
-[Abrir o Apoio em Dia](https://apoio-em-dia-pablo.royalkiwi66.chatgpt.site)
+[Abrir o Apoio em Dia](https://pablosena28.github.io/Bootcamp-Kodie-Academy/projetos/apoio-em-dia/demo/)
 
 A aplicação hospedada está pública e pode ser aberta sem login no ChatGPT. Use somente dados fictícios na demonstração. O código também permite executar o MVP localmente.
 
@@ -86,11 +86,11 @@ React, TypeScript, CSS, Vinext/Vite, SQLite/D1 e Drizzle. A primeira versão foi
 
 Use somente dados fictícios. O protótipo não possui perfis separados de estudante e coordenação; a versão hospedada é uma demonstração pública. Uma implantação real exige autorização por perfil e procedimentos adequados para os dados dos estudantes. GitHub Pages não executa este backend; não abra o projeto como um simples arquivo HTML.
 
-## Nova interface Vercel
+## Interface pública no GitHub Pages
 
-A pasta `web/` contém a interface React + Vite independente para publicação na Vercel. O navegador acessa os pedidos em `/api/requests`; uma regra de proxy da Vercel encaminha esses pedidos ao backend persistente existente. O banco continua no serviço original; esta versão não migra dados nem substitui o backend. A origem está documentada em `web/vercel.json`. O domínio público do frontend será atualizado após confirmar a publicação.
+O endereço acima abre sem login no ChatGPT. A pasta `demo/` contém os arquivos estáticos publicados. A pasta `web/` contém o código React + Vite dessa interface. As operações do formulário usam uma API externa que conserva o banco D1 persistente e os registros anteriores. A origem técnica da API está declarada em `web/scripts/build-pages.mjs`; o backend permite CORS para `https://pablosena28.github.io`. A interface estática não guarda os pedidos apenas no navegador.
 
-### Executar a interface nova
+### Executar e atualizar a interface
 
 ```bash
 cd web
@@ -98,12 +98,10 @@ npm install
 npm run dev
 ```
 
-Abra http://127.0.0.1:5173. Nesta modalidade, o formulário usa o banco compartilhado da demonstração hospedada; utilize apenas dados fictícios. Para testar o backend completo e um banco isolado no computador, siga a execução da pasta principal acima.
+O servidor de desenvolvimento encaminha `/api` ao backend de demonstração. Para reconstruir os arquivos destinados ao Pages:
 
-### Configuração Vercel
+```bash
+npm run build:pages
+```
 
-- Root Directory: `projetos/apoio-em-dia/web`
-- Framework: Vite
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Os rewrites de `web/vercel.json` mantêm a URL da Vercel no navegador e permitem as operações da API.
+Depois, publique os arquivos atualizados em `web/` e `demo/` no GitHub. A raiz do repositório já utiliza Pages com a branch principal. Use apenas dados fictícios: a interface compartilha o banco de demonstração. Os comandos da pasta principal continuam disponíveis para um banco local isolado. A configuração `web/vercel.json` é uma alternativa de proxy, não o endereço publicado neste momento.

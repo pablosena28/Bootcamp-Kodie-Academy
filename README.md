@@ -25,7 +25,7 @@ Aplicação React + Vite que consulta logradouros do município do Rio de Janeir
 MVP de atendimento estudantil com formulário, banco persistente, workflow de triagem e painel de acompanhamento.
 
 - Código e execução: [projetos/apoio-em-dia](projetos/apoio-em-dia)
-- Aplicação: https://apoio-em-dia-pablo.royalkiwi66.chatgpt.site (acesso público, sem login)
+- Aplicação: https://pablosena28.github.io/Bootcamp-Kodie-Academy/projetos/apoio-em-dia/demo/ (acesso público, sem login)
 - Tecnologias: React, TypeScript, CSS, Vinext/Vite e SQLite/D1
 - Desafio 3: problema, público, solução, funcionalidades e resultado esperado documentados no projeto.
 

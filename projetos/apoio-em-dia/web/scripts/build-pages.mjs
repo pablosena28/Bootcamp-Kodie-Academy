@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {cpSync,rmSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const env={...process.env,VITE_API_BASE_URL:'https://apoio-em-dia-pablo.royalkiwi66.chatgpt.site'};
+execFileSync(process.execPath,[resolve(root,'node_modules/typescript/bin/tsc'),'--noEmit'],{cwd:root,stdio:'inherit',env});
+execFileSync(process.execPath,[resolve(root,'node_modules/vite/bin/vite.js'),'build','--base=/Bootcamp-Kodie-Academy/projetos/apoio-em-dia/demo/'],{cwd:root,stdio:'inherit',env});
+const output=resolve(root,'../demo');
+rmSync(output,{recursive:true,force:true});cpSync(resolve(root,'dist'),output,{recursive:true});
+console.log('Interface publicada em projetos/apoio-em-dia/demo.');
