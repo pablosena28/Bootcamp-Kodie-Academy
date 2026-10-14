@@ -10,7 +10,7 @@ MVP para organizar pedidos de apoio em um pré-vestibular social, inspirado na e
 
 [Abrir o Apoio em Dia](https://apoio-em-dia-pablo.royalkiwi66.chatgpt.site)
 
-A aplicação hospedada está com acesso privado do proprietário. Para avaliação por terceiros, o acesso precisa ser liberado no Sites. O código público neste repositório também permite executar o MVP localmente.
+A aplicação hospedada está pública e pode ser aberta sem login no ChatGPT. Use somente dados fictícios na demonstração. O código também permite executar o MVP localmente.
 
 ## Descrição para a entrega
 
@@ -84,4 +84,4 @@ React, TypeScript, CSS, Vinext/Vite, SQLite/D1 e Drizzle. A primeira versão foi
 
 ## Limites do MVP
 
-Use somente dados fictícios. O protótipo não possui perfis separados de estudante e coordenação; na versão hospedada, a proteção é o acesso privado do Sites. Uma implantação real exige autorização por perfil e procedimentos adequados para os dados dos estudantes. GitHub Pages não executa este backend; não abra o projeto como um simples arquivo HTML.
+Use somente dados fictícios. O protótipo não possui perfis separados de estudante e coordenação; a versão hospedada é uma demonstração pública. Uma implantação real exige autorização por perfil e procedimentos adequados para os dados dos estudantes. GitHub Pages não executa este backend; não abra o projeto como um simples arquivo HTML.
