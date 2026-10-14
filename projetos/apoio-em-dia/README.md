@@ -85,3 +85,25 @@ React, TypeScript, CSS, Vinext/Vite, SQLite/D1 e Drizzle. A primeira versão foi
 ## Limites do MVP
 
 Use somente dados fictícios. O protótipo não possui perfis separados de estudante e coordenação; a versão hospedada é uma demonstração pública. Uma implantação real exige autorização por perfil e procedimentos adequados para os dados dos estudantes. GitHub Pages não executa este backend; não abra o projeto como um simples arquivo HTML.
+
+## Nova interface Vercel
+
+A pasta `web/` contém a interface React + Vite independente para publicação na Vercel. O navegador acessa os pedidos em `/api/requests`; uma regra de proxy da Vercel encaminha esses pedidos ao backend persistente existente. O banco continua no serviço original; esta versão não migra dados nem substitui o backend. A origem está documentada em `web/vercel.json`. O domínio público do frontend será atualizado após confirmar a publicação.
+
+### Executar a interface nova
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Abra http://127.0.0.1:5173. Nesta modalidade, o formulário usa o banco compartilhado da demonstração hospedada; utilize apenas dados fictícios. Para testar o backend completo e um banco isolado no computador, siga a execução da pasta principal acima.
+
+### Configuração Vercel
+
+- Root Directory: `projetos/apoio-em-dia/web`
+- Framework: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Os rewrites de `web/vercel.json` mantêm a URL da Vercel no navegador e permitem as operações da API.
