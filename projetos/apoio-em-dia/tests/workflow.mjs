@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {triage,transitions} from '../lib/workflow.ts';
+const now=new Date('2026-10-14T18:00:00Z');
+assert.equal(triage('Dificuldade de frequência',now).due,'2026-10-15T18:00:00.000Z');
+assert.equal(triage('Acessibilidade',now).priority,'Alta');
+assert.equal(triage('Monitoria',now).owner,'Educadores');
+assert.equal(triage('Outros',now).due,'2026-10-17T18:00:00.000Z');
+assert.throws(()=>triage('Categoria inexistente',now));
+assert.deepEqual(transitions.Novo,['Em atendimento']);
+assert.deepEqual(transitions['Em atendimento'],['Resolvido']);
+assert.deepEqual(transitions.Resolvido,['Em atendimento']);
+console.log('Triagem, prazos e transições: OK');
